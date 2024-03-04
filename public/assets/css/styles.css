@@ -120,3 +120,84 @@ img {
 }
 /* preset */
 
+/*=============== HEADER & NAV ===============*/
+/* Navigation for mobile devices */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    transition: box-shadow 400ms, background-color 400ms;
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--container-color);
+    box-shadow: 0 -8px 32px hsla(0, 0% , 0% , .1);
+    padding: 1.25em 4rem;
+    transition: background-color 400ms;
+}
+.nav__list{
+    display: flex;
+    justify-content: space-between;
+}
+.nav__link{
+    color: var(--text-color);
+    transition: color 400ms
+}
+.nav__link span{
+    display: none;
+}
+/* Navigation for mobile devices */
+
+/* Add shadow header */
+
+
+/* Active link */
+
+
+/*=============== SEARCH ===============*/
+
+
+/* Show search */
+
+
+/*=============== LOGIN ===============*/
+
+
+/* Show login */
+
+
+/*=============== HOME ===============*/
+
+
+
+
+
+/*=============== style ===============*/
+.nav__logo img{
+    width: 30px;
+    display: inline;
+}
