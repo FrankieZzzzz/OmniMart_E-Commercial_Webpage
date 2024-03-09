@@ -23,7 +23,7 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo"><img src="assets/images/logo.png" alt="web_logo" />OmniMart </a>
+        <a href="#" class="nav__logo"><img src="assets/images/logo.png" alt="web_logo" />Furnique </a>
         <div class="nav__menu">
           <ul class="nav__list">
             <li class="nav__item">
@@ -71,17 +71,42 @@
         </div>
       </nav>
     </header>
-    <!--==================== SEARCH ====================-->
+    <!--==================== search ====================-->
     <div class="search" id="search-content">
       <form action="" class="search__form">
         <i class="fa-solid fa-magnifying-glass search__icon"></i>
         <input type="search" class="search__input" placeholder="What are you looking for?" />
       </form>
-
       <i class="fa-solid fa-xmark search__close" id="search-close"></i>
     </div>
+    <!--==================== login ====================-->
+    <div class="login grid" id="login-content">
+      <form action="" class="login__title grid login__form">
+        <h3 class="login__title">Log In</h3>
+        <div class="login__group grid">
+          <div>
+            <label for="login__email" class="login__label">Email</label>
+            <input type="email" class="login__input" placeholder="Write your email" id="login__email" />
+          </div>
 
-    <!--==================== LOGIN ====================-->
+          <div>
+            <label for="login-pass" class="login__label">Password</label>
+            <input type="password" class="login__input" placeholder="Enter your password" id="login-pass" />
+          </div>
+        </div>
+
+        <div>
+          <span class="login__signup"> You do not have an account? <a href="#">Sign up</a> </span>
+          <a href="#" class="login__forget">You forgot your password</a>
+        </div>
+        <button type="submit" class="login__button button">Log In</button>
+      </form>
+      <i class="fa-solid fa-xmark login__close" id="login-close"></i>
+    </div>
+    <!--==================== main ====================-->
+    <main class="main">
+      <section class="home section" id="home"></section>
+    </main>
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
