@@ -54,6 +54,21 @@ new Swiper('#home__swiper', {
         clickable: true,
       },
 });
+/*=============== featured swiper ===============*/
+new Swiper('#featured__swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    centeredSlides: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
 /*=============== menu show ===============*/
 const shadowHeader = ()=>{
     const header = document.getElementById('header')

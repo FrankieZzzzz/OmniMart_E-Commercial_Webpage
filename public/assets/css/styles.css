@@ -322,20 +322,10 @@ img {
 .home__description{
     margin-bottom: 1rem;
 }
-/* .home__article,
-.home__img{
-    scale: 0.98;
-    transition: scale 400ms ease-in-out;
-} */
+
 .home__images{
     display: grid;
 }
-
-/* swiper class */
-/* .swiper-slide-active,
-.swiper-slide-duplicate-active{
-    scale:1;
-} */
 .swiper {
     width: 100%;
     padding-top: 20px;
@@ -351,6 +341,90 @@ img {
     background-position: center;
     background-size: cover;
     width: 300px;
+}
+/*=============== services ===============*/
+.services__containter{
+    row-gap: 3rem;
+}
+.services__card{
+    text-align: center;
+}
+.services__card i{
+    display: block;
+    font-size: 2rem;
+    color: var(--first-color);
+    margin-bottom: 1rem;
+}
+.services__title{
+    font-size: var(--h3-font-size);
+    margin-bottom: 0.5rem;
+}
+
+/*=============== featured ===============*/
+.featured__card{
+    position: relative;
+    text-align: center;
+    background-color: var(--white-color);
+    padding: 2rem 0.2rem;
+    overflow: hidden;
+    border: 1.5px solid var(--border-color);
+    transition: border 400ms, background-color 400ms;
+}
+.featured__img{
+    width: 180px;
+    margin: 0 auto 0.75rem;
+}
+.featured__title{
+    font-size: var(--h2-font-size);
+    margin-bottom: 1rem;
+}
+.featured__prices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+.featured__discount{
+    color: var(--title-color);
+}
+.featured__price{
+    font-size: var(--small-font-size);
+    text-decoration: line-through;
+}
+.featured__card .button{
+    cursor: pointer;
+}
+.featured__actions{
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+    position: absolute;
+    top: 2rem;
+    right: -1.5rem;
+    transition: right 400ms;
+}
+.featured__actions button{
+    background: none;
+    font-size: 1rem;
+    color: var(--first-color);
+    cursor: pointer;
+}
+.featured__card:hover .featured__actions{
+    right: 1.5rem;
+}
+/* swiper arrow class */
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    content: '';
+}
+.swiper-button-prev,
+.swiper-button-next{
+    /* background-color: var(--container-color); */
+    /* border: 1px solid var(--border-color); */
+    font-size: 1.5rem;
+    color: var(--first-color);
+    transition: border 400ms ease-in-out;
 }
 /*=============== button ===============*/
 .button{
