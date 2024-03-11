@@ -1,3 +1,4 @@
+
 /*=============== SEARCH ===============*/
 let searchBtn = document.getElementById('search-button'),
     searchClose = document.getElementById('search-close'),
@@ -33,3 +34,30 @@ if (loginClose) {
         loginContent.classList.remove('show-login')
     })
 }
+
+/*=============== home swiper ===============*/
+new Swiper('#home__swiper', {
+    loop: true,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+});
+/*=============== menu show ===============*/
+const shadowHeader = ()=>{
+    const header = document.getElementById('header')
+    this.scrollY >= 50 ? header.classList.add('shadow-header')
+    : header.classList.remove('shadow-header')
+}
+window.addEventListener('scroll', shadowHeader)

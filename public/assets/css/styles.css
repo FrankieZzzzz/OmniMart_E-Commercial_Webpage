@@ -1,6 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Montserrat:wght@400;500;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 /*=============== VARIABLES CSS ===============*/
 :root {
     --header-height: 3.5rem;
@@ -119,6 +120,9 @@ img {
     background-color: var(--body-color);
     z-index: var(--z-fixed);
     transition: box-shadow 400ms, background-color 400ms;
+}
+.shadow-header{
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
 }
 .nav {
     height: var(--header-height);
@@ -303,19 +307,73 @@ img {
     color: var(--title-color);
     cursor: pointer;
 }
+
+/*=============== home ===============*/
+.home__swiper{
+    padding-top: 2rem;
+}
+.home__data{
+    text-align: center;
+}
+.home__title{
+    font-size: var(--biggest-font-size);
+    margin-bottom: 1rem;
+}
+.home__description{
+    margin-bottom: 1rem;
+}
+/* .home__article,
+.home__img{
+    scale: 0.98;
+    transition: scale 400ms ease-in-out;
+} */
+.home__images{
+    display: grid;
+}
+
+/* swiper class */
+/* .swiper-slide-active,
+.swiper-slide-duplicate-active{
+    scale:1;
+} */
+.swiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.swiper-slide img {
+    display: block;
+    /* width: 90%; */
+    object-fit: contain;
+    margin: 0px auto;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+}
 /*=============== button ===============*/
 .button{
     display: inline-block;
     background-color: var(--first-color);
     color: var(--white-color);
     font-weight: var(--font-semi-bold);
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     transition: box-shadow 400ms;
     border-radius: 8px;
+    margin-right: 12px;
 }
-.button:hover{
+.button:hover,
+.outline_button:hover{
     box-shadow: 0 4px 16px hsla(230, 72%, 32%, 0.2);
 }
+.outline_button{
+    border: 1px solid var(--first-color);
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: box-shadow 400ms;
+}
+
 .show-login{
     top: 0px;
 }

@@ -14,6 +14,8 @@
     <!--=============== fontawsome ===============-->
     <script src="https://kit.fontawesome.com/95ae3d12b8.js" crossorigin="anonymous"></script>
 
+    <!--=============== swiper CSS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
 
@@ -105,9 +107,40 @@
     </div>
     <!--==================== main ====================-->
     <main class="main">
-      <section class="home section" id="home"></section>
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">Discover the Latest and Greatest Products</h1>
+            <p class="home__description">Explore our wide selection of top-rated and trending items</p>
+            <a href="#" class="button">Shop</a>
+            <a href="#" class="outline_button">Learn More</a>
+          </div>
+
+          <div class="home__images">
+            <div class="swiper" id="home__swiper">
+              <div class="swiper-wrapper">
+                <article class="home__article swiper-slide">
+                  <img src="assets/images/furniture_heroImage_1.jpeg" alt="" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="assets/images/furniture_heroImage_2.jpeg" alt="" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="assets/images/furniture_heroImage_3.jpeg" alt="" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="assets/images/furniture_heroImage_4.jpeg" alt="" class="home__img" />
+                </article>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
+    <!--=============== swiper JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
   </body>
