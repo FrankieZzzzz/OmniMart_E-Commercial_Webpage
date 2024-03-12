@@ -69,6 +69,32 @@ new Swiper('#featured__swiper', {
         clickable: true,
     },
 });
+
+/*=============== new arrival swiper ===============*/
+new Swiper('#new__swiper', {
+    loop: true,
+    pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+    },
+});
+
+/*=============== testimonial swiper Autoplay===============*/
+new Swiper("#testimonial__swiper", {
+        loop: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+
 /*=============== menu show ===============*/
 const shadowHeader = ()=>{
     const header = document.getElementById('header')
