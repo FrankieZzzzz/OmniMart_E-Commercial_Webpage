@@ -21,7 +21,7 @@
     --body-font: "Montserrat", sans-serif;
     --second-font: "Bebas Neue",sans-serif;
     --biggest-font-size: 2rem;
-    --h1-font-size: 1.5rem;
+    --h1-font-size: 1.8rem;
     --h2-font-size: 1.25rem;
     --h3-font-size: 1rem;
     --normal-font-size: .938rem;
@@ -107,7 +107,7 @@ body.dark-theme{
 }
 .dark-theme .featured__title,
 .dark-theme .featured__discount{
-    color: black;
+    color: var(--text-color);
 }
 .dark-theme .search,.dark-theme .login{
     background-color: hsla(230, 12%, 8%, 0.6);
@@ -124,10 +124,18 @@ body.dark-theme{
 .dark-theme::-webkit-scrollbar-thumb:hover {
     background-color: hsl(230, 16%, 35%);
 }
+.dark-theme .featured,
+.dark-theme .new,
+.dark-theme .footer {
+    background-color: var(--body-color);
+}
+.dark-theme .featured__card{
+    background-color: var(--container-color);
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
     max-width: 1220px;
-    margin-inline: 1.5rem;
+    /* margin-inline: 1.5rem; */
 }
 .grid {
     display: grid;
@@ -167,16 +175,26 @@ body.dark-theme{
     align-items: center;
 }
 .nav__logo,
+.nav__logo_dark,
 .footer__logo {
     display: inline-flex;
     align-items: center;
-    column-gap: 0.5rem;
+    column-gap: 1rem;
     color: var(--first-color);
     font-weight: var(--font-medium);
     font-family: "Bebas Neue", sans-serif;
     font-size: 1.25rem;
+    margin-left: 1rem;
 }
-
+.nav__logo_dark{
+    display: none;
+}
+.dark-theme .nav__logo{
+    display: none;
+}
+.dark-theme .nav__logo_dark{
+    display: inline-flex;
+}
 .nav__list{
     display: flex;
     justify-content: space-between;
@@ -282,8 +300,8 @@ body.dark-theme{
     transition: top 400ms;
 }
 .login__form{
-    background-color: var(--container-color);
-    padding: 2rem 1.5rem;
+    background-color: var(--white-color);
+    padding: 3rem 3rem;
     border: 2px solid var(--border-color);
     row-gap: 1.25rem;
 }
@@ -302,7 +320,7 @@ body.dark-theme{
 }
 .login__input{
     width: 100%;
-    background-color: var(--container-color);
+    background-color: var(--white-color);
     border: 2px solid var(--border-color);
     padding: 1rem;
     color: var(--text-color);
@@ -373,6 +391,7 @@ body.dark-theme{
     width: 300px;
 }
 /*=============== services ===============*/
+
 .services__containter{
     row-gap: 3rem;
 }
@@ -386,19 +405,23 @@ body.dark-theme{
     margin-bottom: 1rem;
 }
 .services__title{
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
     margin-bottom: 0.5rem;
 }
 
 /*=============== featured ===============*/
+.featured{
+    background-color: var(--white-color);
+}
 .featured__card{
     position: relative;
     text-align: center;
     background-color: var(--white-color);
+    
     padding: 2rem 0.2rem;
     overflow: hidden;
-    border: 1.5px solid var(--border-color);
     transition: border 400ms, background-color 400ms;
+    color: var(--border-color);
 }
 .featured__img{
     width: 180px;
@@ -421,6 +444,8 @@ body.dark-theme{
 .featured__price{
     font-size: var(--small-font-size);
     text-decoration: line-through;
+    color: var(--title-color);
+    opacity: 0.6;
 }
 .featured__card .button{
     cursor: pointer;
@@ -455,8 +480,10 @@ body.dark-theme{
     transition: border 400ms ease-in-out;
 }
 /*=============== discount ===============*/
+
 .discount__container{
     row-gap: 3.5rem;
+
 }
 .discount__data{
     text-align: center;
@@ -466,6 +493,73 @@ body.dark-theme{
 }
 .discount__description{
     margin-bottom: 2rem;
+}
+.discount__item{
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding-bottom: 50px;
+    cursor: pointer;
+    /* background-color: var(--container-color); */
+}
+.discount__thumbnail{
+    margin-bottom: 30px;
+    position: relative;
+    top: 0;
+    transform: top .3s ease;
+    width: 75%;
+    margin: 0px auto;
+}
+.discount__thumbnail:hover{
+    top: -25px;
+}
+.discount__item h3{
+    font-weight: 600;
+    font-size: var(--h2-font-sizes);
+}
+.product__icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: -17.5px;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s all ease;
+}
+.discount__item:before {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    background: var(--border-color);
+    height: 0%;
+    z-index: -1;
+    border-radius: 10px;
+    transition: .5s all ease;
+}
+.discount__item:hover a .discount__thumbnail{
+    top: -25px;
+}
+.discount__item:hover .product__icon{
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.discount__item:hover:before {
+   height: 70%;
+}
+.product__icon i{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
 }
 .discount__images{
     display: flex;
@@ -488,22 +582,31 @@ body.dark-theme{
 .swiper{
     width: 100%;
 }
+.swiper-wrapper{
+    height: 4   00px;
+}
+.new {
+    background-color: var(--white-color);
+}
 .new__card{
     display: flex;
     align-items: center;
     column-gap: 2.5rem;
-    background-color: var(--white-color);
     color: var(--text-color);
-    border: 2px solid var(--border-color);
     transition: border 400ms;
+    /* outline: 2px solid transparent; */
     padding: 3% 3%;
-}
-.new__img{
-    width: 170px;
+    box-shadow: 0 0 0 0px black;
+    transition: box-shadow 0.3s ease-in-out;
 }
 .new__card:hover{
-    border: 2px solid var(--text-color);
+    outline: 2px solid var(--text-color);
     margin-bottom: 0.5rem;
+    box-shadow: 0 0 0 2px black;
+}
+.new__img {
+    width: 220px;
+    padding: 20px 0px;
 }
 .new__prices{
     display: flex;
@@ -542,6 +645,7 @@ body.dark-theme{
 .join__title,
 .join__content{
     color: var(--white-color);
+    text-align: center;
 }
 
 .join__form{
@@ -550,7 +654,6 @@ body.dark-theme{
 }
 .join__input{
     padding: 1.25rem 0.75rem;
-    background-color: var(--body-color);
     color: var(--title-color);
     transition: background-color 400ms;
     border-radius: 8px;
@@ -566,6 +669,7 @@ body.dark-theme{
 }
 
 /*=============== testimonial ===============*/
+
 .testimonial__card{
     text-align: center;
     background-color: var(--container-color);
@@ -594,7 +698,8 @@ body.dark-theme{
 }
 /*=============== footer ===============*/
 .footer{
-    padding-block: 4rem 6rem;
+    padding: 3rem 0rem;
+    background-color: var(--white-color);
 }
 .footer__container{
     row-gap: 3rem;
@@ -604,7 +709,7 @@ body.dark-theme{
     align-items: center;
     column-gap: 0.5rem;
     color: var(--first-color);
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
     font-family: var(--second-font);
     margin-bottom: 1.25rem;
 }
@@ -612,12 +717,15 @@ body.dark-theme{
 .footer__logo i{
     font-size: 1.25rem;
 }
+.footer__description{
+    padding-left: 20px;
+}
 .footer__data{
     grid-template-columns: repeat(2, max-content);
-    gap: 3rem 2rem;
+    gap: 3rem 1rem;
 }
 .footer__title{
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
     margin-bottom: 1.25rem;
 }
 .footer__links{
@@ -712,6 +820,7 @@ body.dark-theme{
     bottom: 6rem;
 }
 /*=============== style ===============*/
+.nav__logo_dark img,
 .nav__logo img{
     width: 30px;
     display: inline;
@@ -722,6 +831,14 @@ body.dark-theme{
 .footer__logo img{
     width: 30px;
 }
+/*=============== map ===============*/
+#map{
+    width: 260px;
+    height: 220px;
+    margin: 0px auto;
+}
+
+
 
 /*=============== breakpoints ===============*/
 @media screen and (max-width: 1150px ){
@@ -822,6 +939,13 @@ body.dark-theme{
         width: 420px;
         justify-self: center;
     }
+    .discount__gridBox{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 6%;
+        margin-bottom: 2rem;
+    }
     .services__container{
         grid-template-columns: repeat(3, max-content);
         justify-content: center;
@@ -838,7 +962,7 @@ body.dark-theme{
 /* for large devices */
 @media screen and (min-width:1150px) {
     .section{
-        padding-block: 7rem 2rem;
+        padding-block: 7rem 3rem;
     }
     .nav{
         height: calc(var(--header-height) + 2rem);
@@ -853,7 +977,7 @@ body.dark-theme{
 
     .nav__menu{
         width: initial;
-        margin-inline: auto 0;
+        padding-top: 0.7rem;
     }
     .nav__list{
         column-gap: 4rem;
@@ -872,7 +996,6 @@ body.dark-theme{
     }
     .services__container{
         column-gap: 10rem;
-
     }
     .services__card i{
         font-size: 3.5rem;
@@ -880,16 +1003,24 @@ body.dark-theme{
     .featured__container{
         padding-top: 0rem;
     }
-    .featured__title{
-        font-size: var(--h3-font-size);
+        .featured__title{
+        font-size: var(--h2-font-size);
     }
     .discount__container{
-        grid-template-columns: 615px 500px;
-        justify-content: space-between;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
-    .discount__data{
-        order: 1;
+    .discount__container .discount__data p{
+        width: 30%;
+    }
+    .discount__gridBox {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 6%;
+    }
+    .discount__item h3 {
+        font-size: 20px;
+        padding-top: 20px;
     }
     .discount__data,
     .discount__title{
@@ -898,9 +1029,8 @@ body.dark-theme{
     .discount__description{
         margin-bottom: 3.5rem;
     }
-    .discount__img-1,
-    .discount__img-2{
-        width: 300px;
+    .discount__thumbnail{
+        width: 100%;
     }
     .new__container{
         padding-top: 0rem;
@@ -909,10 +1039,10 @@ body.dark-theme{
         padding: 1.5rem;
     }
     .new__img{
-        width: 120px;
+        width: 200px;
     }
     .new__title{
-        font-size: var(--h3-font-size);
+        font-size: var(--h2-font-size);
     }
 
     .join__bg{
@@ -926,7 +1056,7 @@ body.dark-theme{
         padding-inline: 2rem;
     }
     .testimonial__title{
-        font-size: var(--h3-font-size);
+        font-size: var(--h2-font-size);
     }
     .testimonial__description{
         font-size: var(--normal-font-size);
@@ -942,6 +1072,9 @@ body.dark-theme{
     .footer__title{
         font-size: var(--h2-font-size);
         margin-bottom: 1.5rem;
+    }
+    .footer__data ul{
+        padding-left: 0px;
     }
     .footer__links{
         row-gap: 1rem;

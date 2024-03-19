@@ -10,12 +10,16 @@
 
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
-
+    <!--=============== maps ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!--=============== fontawsome ===============-->
     <script src="https://kit.fontawesome.com/95ae3d12b8.js" crossorigin="anonymous"></script>
-
+    <!--=============== Bootstrap ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <!--=============== swiper CSS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--=============== lightbox ===============-->
+    <link rel="stylesheet" href="assets/css/lightbox.css" type="text/css" />
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
 
@@ -26,7 +30,8 @@
     <header class="header" id="header">
       <nav class="nav container">
         <div>
-          <a href="#" class="nav__logo"> <img src="assets/images/logo.png" alt="web_logo" />Furnique </a>
+          <a href="#home" class="nav__logo"> <img src="assets/images/logo.png" alt="web_logo" />Furnique </a>
+          <a href="#home" class="nav__logo_dark"> <img src="assets/images/logo_white.png" alt="web_logo" />Furnique </a>
         </div>
         <div class="nav__menu">
           <ul class="nav__list">
@@ -118,7 +123,6 @@
             <a href="#" class="button">Shop</a>
             <a href="#" class="outline_button">Learn More</a>
           </div>
-
           <div class="home__images">
             <div class="swiper" id="home__swiper">
               <div class="swiper-wrapper">
@@ -133,6 +137,15 @@
                 </article>
                 <article class="home__article swiper-slide">
                   <img src="assets/images/furniture_heroImage_4.jpeg" alt="" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="assets/images/furniture_heroImage_5.jpeg" alt="" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="assets/images/furniture_heroImage_6.jpeg" alt="" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="assets/images/furniture_heroImage_7.jpeg" alt="" class="home__img" />
                 </article>
               </div>
               <div class="swiper-pagination"></div>
@@ -167,25 +180,26 @@
           <div class="featured__swiper swiper" id="featured__swiper">
             <div class="swiper-wrapper">
               <article class="featured__card swiper-slide">
-                <img src="assets/images/furniture_featuredImg_1.jpeg" alt="" class="featured__img" />
-                <h2 class="featured__title">Featured Product</h2>
+                <a class="featured__image_link" href="assets/images/furniture_featuredImg_1.png" data-lightbox="furniture_featuredImg_1">
+                  <img src="assets/images/furniture_featuredImg_1.png" alt="" class="featured__img" />
+                </a>
+                <h2 class="featured__title">DAJLIEN</h2>
                 <div class="featured__prices">
                   <span class="featured__discount">$1100</span>
                   <span class="featured__price">$999</span>
                 </div>
-
                 <button class="button">Add To Cart</button>
-
                 <div class="featured__actions">
                   <button><i class="fa-solid fa-magnifying-glass"></i></button>
                   <button><i class="fa-regular fa-heart"></i></button>
                   <button><i class="fa-regular fa-eye"></i></button>
                 </div>
               </article>
-
               <article class="featured__card swiper-slide">
-                <img src="assets/images/furniture_featuredImg_2.avif" alt="" class="featured__img" />
-                <h2 class="featured__title">Featured Product</h2>
+                <a class="featured__image_link" href="assets/images/furniture_featuredImg_2.png" data-lightbox="furniture_featuredImg_2">
+                  <img src="assets/images/furniture_featuredImg_2.png" alt="" class="featured__img" />
+                </a>
+                <h2 class="featured__title">DAJLIEN</h2>
                 <div class="featured__prices">
                   <span class="featured__discount">$699</span>
                   <span class="featured__price">$1299</span>
@@ -199,13 +213,30 @@
                   <button><i class="fa-regular fa-eye"></i></button>
                 </div>
               </article>
-
               <article class="featured__card swiper-slide">
-                <img src="assets/images/furniture_featuredImg_3.avif" alt="" class="featured__img" />
-                <h2 class="featured__title">Featured Product</h2>
+                <a class="featured__image_link" href="assets/images/furniture_featuredImg_3.png" data-lightbox="furniture_featuredImg_3">
+                  <img src="assets/images/furniture_featuredImg_3.png" alt="" class="featured__img" />
+                </a>
+                <h2 class="featured__title">KNOXHULT</h2>
                 <div class="featured__prices">
                   <span class="featured__discount">$299</span>
                   <span class="featured__price">$599</span>
+                </div>
+                <button class="button">Add To Cart</button>
+                <div class="featured__actions">
+                  <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <button><i class="fa-regular fa-heart"></i></button>
+                  <button><i class="fa-regular fa-eye"></i></button>
+                </div>
+              </article>
+              <article class="featured__card swiper-slide">
+                <a class="featured__image_link" href="assets/images/furniture_featuredImg_4.png" data-lightbox="furniture_featuredImg_4">
+                  <img src="assets/images/furniture_featuredImg_4.png" alt="" class="featured__img" />
+                </a>
+                <h2 class="featured__title">ENHET</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$499</span>
+                  <span class="featured__price">$899</span>
                 </div>
 
                 <button class="button">Add To Cart</button>
@@ -216,13 +247,50 @@
                   <button><i class="fa-regular fa-eye"></i></button>
                 </div>
               </article>
-
               <article class="featured__card swiper-slide">
-                <img src="assets/images/furniture_featuredImg_4.avif" alt="" class="featured__img" />
-                <h2 class="featured__title">Featured Product</h2>
+                <a class="featured__image_link" href="assets/images/furniture_featuredImg_5.png" data-lightbox="furniture_featuredImg_5">
+                  <img src="assets/images/furniture_featuredImg_5.png" alt="" class="featured__img" />
+                </a>
+                <h2 class="featured__title">SEKTION / MAXIMERA</h2>
                 <div class="featured__prices">
                   <span class="featured__discount">$499</span>
                   <span class="featured__price">$899</span>
+                </div>
+
+                <button class="button">Add To Cart</button>
+
+                <div class="featured__actions">
+                  <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <button><i class="fa-regular fa-heart"></i></button>
+                  <button><i class="fa-regular fa-eye"></i></button>
+                </div>
+              </article>
+              <article class="featured__card swiper-slide">
+                <a class="featured__image_link" href="assets/images/furniture_featuredImg_6.png" data-lightbox="furniture_featuredImg_6">
+                  <img src="assets/images/furniture_featuredImg_6.png" alt="" class="featured__img" />
+                </a>
+                <h2 class="featured__title">KNOXHULT</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$799</span>
+                  <span class="featured__price">$1099</span>
+                </div>
+
+                <button class="button">Add To Cart</button>
+
+                <div class="featured__actions">
+                  <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <button><i class="fa-regular fa-heart"></i></button>
+                  <button><i class="fa-regular fa-eye"></i></button>
+                </div>
+              </article>
+              <article class="featured__card swiper-slide">
+                <a class="featured__image_link" href="assets/images/furniture_featuredImg_7.png" data-lightbox="furniture_featuredImg_7">
+                  <img src="assets/images/furniture_featuredImg_7.png" alt="" class="featured__img" />
+                </a>
+                <h2 class="featured__title">KALLAX</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$299</span>
+                  <span class="featured__price">$599</span>
                 </div>
 
                 <button class="button">Add To Cart</button>
@@ -245,16 +313,58 @@
       </section>
       <!--==================== Discount ====================-->
       <section class="discount section" id="discount">
-        <div class="discount__container container grid">
+        <div class="discount__container container">
+          <!-- left text content -->
           <div class="discount__data">
             <h2 class="discount__title section__title">Up To 50% Discount</h2>
             <p class="discount__description">Sign up for our newsletter to receive special offers and stay updated on new arrivals</p>
             <a href="#" class="button">Shop Now</a>
           </div>
-
-          <div class="discount__images">
-            <img src="assets/images/furniture_discountImg_1.avif" alt="" class="discount__img-1" />
-            <img src="assets/images/furniture_discountImg_2.avif" alt="" class="discount__img-2" />
+          <div class="discount__gridBox">
+            <!-- items 1-->
+            <div class="">
+              <a class="discount__item" href="#">
+                <img src="assets/images/furniture_discountImg_1.png" class="discount__thumbnail" />
+                <h3>ENHET / TVÄLLEN</h3>
+                <p class="discount__price">$329.00</p>
+                <span class="product__icon">
+                  <i class="fa-solid fa-circle-plus"></i>
+                </span>
+              </a>
+            </div>
+            <!-- items 2-->
+            <div class="">
+              <a class="discount__item" href="#">
+                <img src="assets/images/furniture_discountImg_2.png" class="discount__thumbnail" />
+                <h3>GODMORGON</h3>
+                <p class="discount__price">$459.00</p>
+                <span class="product__icon">
+                  <i class="fa-solid fa-circle-plus"></i>
+                </span>
+              </a>
+            </div>
+            <!-- items 3-->
+            <div class="">
+              <a class="discount__item" href="#">
+                <img src="assets/images/furniture_discountImg_3.png" class="discount__thumbnail" />
+                <h3>HÄRLANDA</h3>
+                <p class="discount__price">$259.00</p>
+                <span class="product__icon">
+                  <i class="fa-solid fa-circle-plus"></i>
+                </span>
+              </a>
+            </div>
+            <!-- items 4-->
+            <div class="">
+              <a class="discount__item" href="#">
+                <img src="assets/images/furniture_discountImg_4.png" class="discount__thumbnail" />
+                <h3>GODMORGON</h3>
+                <p class="discount__price">$299.00</p>
+                <span class="product__icon">
+                  <i class="fa-solid fa-circle-plus"></i>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -265,7 +375,8 @@
           <div class="new__swiper swiper" id="new__swiper">
             <div class="swiper-wrapper">
               <a href="#" class="new__card swiper-slide">
-                <img src="assets/images/newArrive-1.avif" alt="" class="new__img" />
+                <!-- <a class="example-image-link" href="assets/images/newArrive-1.png" data-lightbox="example-1"><img class="example-image new__img" src="assets/images/newArrive-1.png" alt="image-1" /></a> -->
+                <img src="assets/images/newArrive-1.png" alt="" class="new__img" />
                 <div>
                   <h2 class="new__title">New Arrival</h2>
                   <div class="new__prices">
@@ -281,9 +392,8 @@
                   </div>
                 </div>
               </a>
-
               <a href="#" class="new__card swiper-slide">
-                <img src="assets/images/newArrive-2.avif" alt="" class="new__img" />
+                <img src="assets/images/newArrive-2.png" alt="" class="new__img" />
                 <div>
                   <h2 class="new__title">New Arrival</h2>
                   <div class="new__prices">
@@ -299,9 +409,8 @@
                   </div>
                 </div>
               </a>
-
               <a href="#" class="new__card swiper-slide">
-                <img src="assets/images/newArrive-3.avif" alt="" class="new__img" />
+                <img src="assets/images/newArrive-3.png" alt="" class="new__img" />
                 <div>
                   <h2 class="new__title">New Arrival</h2>
                   <div class="new__prices">
@@ -317,9 +426,8 @@
                   </div>
                 </div>
               </a>
-
               <a href="#" class="new__card swiper-slide">
-                <img src="assets/images/newArrive-4.avif" alt="" class="new__img" />
+                <img src="assets/images/newArrive-4.png" alt="" class="new__img" />
                 <div>
                   <h2 class="new__title">New Arrival</h2>
                   <div class="new__prices">
@@ -335,9 +443,8 @@
                   </div>
                 </div>
               </a>
-
               <a href="#" class="new__card swiper-slide">
-                <img src="assets/images/newArrive-5.avif" alt="" class="new__img" />
+                <img src="assets/images/newArrive-5.png" alt="" class="new__img" />
                 <div>
                   <h2 class="new__title">New Arrival</h2>
                   <div class="new__prices">
@@ -359,7 +466,7 @@
         </div>
       </section>
       <!--==================== join ====================-->
-      <section class="join section">
+      <section class="join">
         <div class="join__container">
           <img src="assets/images/join-bg.jpeg" alt="" class="join__bg" />
           <div class="join__data container grid">
@@ -376,14 +483,13 @@
       <!--==================== testimonial ====================-->
       <section class="testimonial section" id="testimonial">
         <h2 class="section__title">Customer Opinions</h2>
-
         <div class="testimonial__container container">
           <div class="testimonial__swiper swiper" id="testimonial__swiper">
             <div class="swiper-wrapper">
               <article class="testimonial__card swiper-slide">
                 <img src="assets/images/user_1.jpeg" alt="" class="testimonial__img" />
                 <h2 class="testimonial__title">Emily R.</h2>
-                <p class="testimonial__description">Absolutely love my new couch from Furnique! It looks even better in person and fits perfectly in my living room. Fast delivery and excellent customer service.</p>
+                <p class="testimonial__description">Absolutely love my new couch from Furnique! It looks even better in person and fits perfectly in my room. Fast delivery and excellent customer service.</p>
                 <div class="testimonial__stars">
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
@@ -436,11 +542,12 @@
       <footer class="footer">
         <div class="footer__container container grid">
           <div>
-            <a href="" class="footer__logo">
-              <img src="assets/images/logo.png" alt="" />
-              Furnique
-            </a>
-            <p class="footer__description">Find and explore the best furniture from all your favorite home</p>
+            <div>
+              <a href="#home" class="nav__logo_dark"> <img src="assets/images/logo_white.png" alt="web_logo" />Furnique </a>
+              <a href="#home" class="nav__logo"> <img src="assets/images/logo.png" alt="web_logo" />Furnique </a>
+              <p class="footer__description">Find and explore the best furniture from all your favorite home</p>
+            </div>
+            <div id="map"></div>
           </div>
           <div class="footer__data grid">
             <div>
@@ -517,10 +624,19 @@
         <i class="fa-solid fa-arrow-up"></i>
       </a>
     </main>
+
+    <!--=============== Maps ===============-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!--=============== Bootstrap ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!--=============== scroll reveal JS ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== swiper JS ===============-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--=============== Jquery ===============-->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!--=============== Lightbox ===============-->
+    <script src="assets/js/lightbox.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
   </body>

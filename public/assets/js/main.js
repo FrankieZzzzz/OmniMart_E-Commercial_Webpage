@@ -129,7 +129,7 @@ const shadowHeader = ()=>{
 }
 window.addEventListener('scroll', shadowHeader)
 
-/*=============== show scroll up===============*/
+/*=============== show scroll up ===============*/
 let scrollUp = () =>{
     const scrollUp = document.getElementById('scroll-up')
     this.scrollY >= 350 ? scrollUp.classList.add('show-scroll'):scrollUp.classList.remove('show-scroll')
@@ -195,3 +195,31 @@ sr.reveal(`.home__images`, {delay:200})
 sr.reveal(`.services__card`, {interval:50})
 sr.reveal(`.discount__data`, {origin:'left'})
 sr.reveal(`.discount__images`, {origin:'right'})
+
+// get location
+navigator.geolocation.getCurrentPosition(_getCurrentLocation);
+
+function _getCurrentLocation(position){
+    let latCode = position.coords.latitude;
+    let lonCode = position.coords.longitude;
+
+    var map = L.map('map').setView([latCode, lonCode], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    var marker = L.marker([latCode, lonCode]).addTo(map);
+
+    var circle = L.circle([43.64775, -79.39471], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(map);
+}
+_getCurrentLocation()
+
+
+
+
