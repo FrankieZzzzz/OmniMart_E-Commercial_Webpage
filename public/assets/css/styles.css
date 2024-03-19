@@ -174,6 +174,7 @@ body.dark-theme{
     justify-content: space-between;
     align-items: center;
 }
+
 .nav__logo,
 .nav__logo_dark,
 .footer__logo {
@@ -183,7 +184,7 @@ body.dark-theme{
     color: var(--first-color);
     font-weight: var(--font-medium);
     font-family: "Bebas Neue", sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     margin-left: 1rem;
 }
 .nav__logo_dark{
@@ -495,13 +496,14 @@ body.dark-theme{
     margin-bottom: 2rem;
 }
 .discount__item{
+    width: 70%;
+    margin: 0px auto;
     text-align: center;
     text-decoration: none;
     display: block;
     position: relative;
     padding-bottom: 50px;
     cursor: pointer;
-    /* background-color: var(--container-color); */
 }
 .discount__thumbnail{
     margin-bottom: 30px;
@@ -583,7 +585,7 @@ body.dark-theme{
     width: 100%;
 }
 .swiper-wrapper{
-    height: 4   00px;
+    height: 400px;
 }
 .new {
     background-color: var(--white-color);
@@ -744,11 +746,13 @@ body.dark-theme{
 }
 .footer__social{
     display: flex;
-    column-gap: 1.25rem;
+    column-gap: 1.25rem;    
 }
 .footer__social-link{
-    font-size: 1.25rem;
     color: var(--first-color);
+}
+.footer__social-link i{
+    font-size: 1.5rem;
 }
 .footer__copy{
     display: block;
@@ -822,7 +826,7 @@ body.dark-theme{
 /*=============== style ===============*/
 .nav__logo_dark img,
 .nav__logo img{
-    width: 30px;
+    width: 38px;
     display: inline;
 }
 .footer__logo{
@@ -1017,6 +1021,9 @@ body.dark-theme{
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr;
         gap: 6%;
+    }
+    .discount__item{
+        width: 100%;
     }
     .discount__item h3 {
         font-size: 20px;
