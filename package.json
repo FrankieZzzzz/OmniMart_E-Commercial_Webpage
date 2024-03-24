@@ -1,7 +1,6 @@
 {
   "name": "real_estate_webpage",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "lite-server --baseDir=\"public\""
@@ -14,5 +13,6 @@
   },
   "dependencies": {
     "lightbox2": "^2.11.4"
-  }
+  },
+  "description": ""
 }
